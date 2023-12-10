@@ -1,0 +1,131 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Okiduckey</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+		<script src="./assets/js/map.js"></script>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper-->
+			<div id="wrapper">
+
+				<!-- Nav -->
+					<nav id="nav">
+						<a href="#" class="icon solid fa-home"><span>Subject</span></a>
+						<a href="#map" class="icon solid fa-map"><span>map</span></a>
+						<a href="#info" class="icon solid fa-folder"><span>Info</span></a>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- subject -->
+							<article id="subject" class="panel intro">
+								<header>
+									<h1>전북대학교</h1>
+									<p>시맨틱(semantic) 기반 위치정보 추정 기술</p>
+								</header>
+								<a href="#map" class="jumplink pic">
+									<span class="arrow icon solid fa-chevron-right"><span>Jbnu map</span></span>
+									<img src="images/EMBLEM_B.png" alt="" />
+								</a>
+							</article>
+
+						<!-- map -->
+							<article id="map" class="panel maparea">
+								<header>
+									<h2>Map</h2>
+								</header>
+								<p>
+									궁금한 전북대학교 내의 객체/공간을 입력하세요.
+								</p>
+								<hr width = "100%">
+								
+								<section class="mainfunction">
+
+									<!-- <form method="post" action="get_query.php" class="searchbox" onsubmit="return submitForm()">  -->
+									<!-- <form method="post" action="get_query.php" class="searchbox" >
+										<input type="search" name="dpr_query" id="dpr_query" required>
+										<i class="fa fa-search" id="submit-icon"></i>
+										<a class="clearbtn" onclick="clearInput()" id="clear-btn">Clear</a>
+									  </form> -->
+
+									  <form method="get" class="searchbox" id="queryForm">
+										<input type="search" name="dpr_query" id="dpr_query" required>
+										<i class="fa fa-search" id="submit-icon" onclick="sendQuery(event)"></i>
+										<a class="clearbtn" onclick="clearInput()" id="clear-btn">Clear</a>
+									</form>
+									
+
+									<div id="tmp-container" class="tmp-container"></div>
+
+									  <script>
+										function sendQuery(event) {
+											event.preventDefault(); // 폼의 기본 제출 동작 방지
+
+											//지도
+											placeRandomMarker();
+									
+											//query 전송 코드 -> 나중에 서버로 전송
+											var xhr = new XMLㅎHttpRequest();
+											xhr.onreadystatechange = function() {
+												if (xhr.readyState == 4 && xhr.status == 200) {
+													document.getElementById("tmp-container").innerHTML = xhr.responseText;
+												}
+											};
+											var query = document.getElementById("dpr_query").value;
+											xhr.open("GET", "get_query.php?dpr_query=" + encodeURIComponent(query), true);
+											xhr.send();
+										}
+									
+									</script>
+
+
+									
+
+									  <div id="mapbox" class="mapbox" style="background-color:white; color:black">
+								
+										<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=bc1471990bb16130cb93953a06d22be9"></script>
+									</div>
+
+									
+								</section>
+								
+								
+							</article>
+
+						<!-- Info -->
+							<article id="info" class="panel">
+								<header>
+									<h2>Okiduckey</h2>
+									<hr width = "100%">
+									<div class="info_member">
+										<p>김자연 - IT정보공학과  | 201912352 | annekim1216@naver.com | Github ID: nature1216</p>
+										<p>이미르 - IT정보공학과 | 201912393 | alfm2766@jbnu.ac.kr | Github ID: lalala5772</p>
+									</div>
+								</header>
+								<img class="okicon" src="images/okicon.jpeg" />
+
+							</article>
+
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<link rel="stylesheet" href="./assets/css/mapstyle.css">
+			<script src="./assets/js/inputbutton.js"></script>
+
+	</body>
+</html>
