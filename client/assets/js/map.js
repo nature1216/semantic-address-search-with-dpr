@@ -37,22 +37,18 @@ function initializeMap() {
         mapContainer.style.height = '500px'; 
     }
 
-    // 랜덤한 위치에 마커를 찍는 함수
-function placeRandomMarker() {
+function placeMarker(y_value, x_value) {
     // 기존 마커 제거
     markers.forEach(function(marker) {
         marker.setMap(null);
     });
     markers = [];
 
-    // 랜덤한 위치 생성
-    var lat = 33.450701 + Math.random() * 0.01 - 0.005;
-    var lng = 126.570667 + Math.random() * 0.01 - 0.005;
-    var randomPosition = new kakao.maps.LatLng(lat, lng);
+    var markposition = new kakao.maps.LatLng(y_value, x_value);
 
     // 마커를 생성합니다
     var marker = new kakao.maps.Marker({
-        position: randomPosition
+        position: markposition
     });
 
     // 생성된 마커를 지도에 표시합니다
@@ -60,7 +56,7 @@ function placeRandomMarker() {
     markers.push(marker); // 마커 추적을 위해 배열에 추가
 
     // 지도의 중심을 마커의 위치로 이동시킵니다
-    map.setCenter(randomPosition);
+    map.setCenter(markposition);
 }
 
 

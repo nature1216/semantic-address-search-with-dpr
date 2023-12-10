@@ -56,7 +56,7 @@
 										<a class="clearbtn" onclick="clearInput()" id="clear-btn">Clear</a>
 									  </form> -->
 
-									  <form method="get" class="searchbox" id="queryForm">
+									  <form method="get" class="searchbox" id="queryForm" onsubmit="sendQuery(event)">
 										<input type="text" name="dpr_query" id="dpr_query" required>
 										<i class="fa fa-search" id="submit-icon" onclick="sendQuery(event)"></i>
 										<a class="clearbtn" onclick="clearInput()" id="clear-btn">Clear</a>
@@ -67,15 +67,11 @@
 										function sendQuery(event) {
 											event.preventDefault(); // 폼의 기본 제출 동작 방지
 
-											//지도
-											placeRandomMarker();
-
 											var userInput = $('#dpr_query').val();
 											console.log(userInput);
-											console.log(JSON.stringify({query: userInput}));
 
 											$.ajax({
-                                                url: 'http://15.164.170.166:5000/model',
+                                                url: '',
                                                 type: 'POST',
                                                 async: true ,
                                                 dataType : "json",
@@ -83,6 +79,21 @@
                                                 data: JSON.stringify({query: userInput}),
                                                 success: function(response) {
                                                     console.log(response);  // 서버로부터 반환된 JSON 응답을 로그로 출력합니다.
+
+                                                    var coordinates = response;
+
+													var jsonString = JSON.stringify(coordinates);
+
+													var parsedCoordinates = JSON.parse(jsonString);
+
+													var y_value = parseFloat(parsedCoordinates.y);
+													var x_value = parseFloat(parsedCoordinates.x);
+
+													console.log(y_value);
+													console.log(x_value);
+
+													placeMarker(y_value, x_value);
+
                                                 },
                                                 error: function(error) {
                                                     console.log(error);
@@ -93,9 +104,7 @@
 										}
 									
 									</script>
-
-
-									
+				
 
 									  <div id="mapbox" class="mapbox" style="background-color:white; color:black" height="80%">
 								
