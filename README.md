@@ -65,7 +65,7 @@
 ### koBert base의 모델을 추가 학습한 내용
 - 학습 데이터는  Question-Document Pair 형태로 구성
 - Document는 주어진 Question과 나타내는 위치가 일치하는 설명 텍스트에 해당
-- - e.g. {‘docid’:’1’, ‘qid’:’1’, ‘query’:’공대 7호관 옆 흡연구역으로 와주세요.’, ‘positive_passage’:’(쿼리가 설명하는 위치에 대한 설명)’}
+  - e.g. {‘docid’:’1’, ‘qid’:’1’, ‘query’:’공대 7호관 옆 흡연구역으로 와주세요.’, ‘positive_passage’:’(쿼리가 설명하는 위치에 대한 설명)’}
 - Positive passage: Question에 대한 정확한 답변이나 관련 정보를 포함하는 document
 - Negative passage: Question과 관련성이 낮거나 무관한 정보를 포함하는 document
 - **Question에 대해 positive(=정답) passage는 가까워지고, negative(=정답이 아님) passage와는 멀어지도록 함**
