@@ -86,16 +86,16 @@
 ---
 
 ## 실행 결과
-<img width="610" alt="image" src="https://github.com/lalala5772/algorithm/assets/65425885/6f4e98fa-5396-4b45-81de-5d82815a33a2">
+<img width="800" alt="image" src="https://github.com/lalala5772/algorithm/assets/65425885/6f4e98fa-5396-4b45-81de-5d82815a33a2">
 
 
-<img width="610" alt="image" src="https://github.com/lalala5772/algorithm/assets/65425885/1ab6505e-97a4-492e-9663-80daafef0ca9">
+<img width="800" alt="image" src="https://github.com/lalala5772/algorithm/assets/65425885/1ab6505e-97a4-492e-9663-80daafef0ca9">
 
 
-<img width="610" alt="image" src="https://github.com/lalala5772/algorithm/assets/65425885/1c1ac0d0-654c-4e34-952d-df7cc2108565">
+<img width="800" alt="image" src="https://github.com/lalala5772/algorithm/assets/65425885/1c1ac0d0-654c-4e34-952d-df7cc2108565">
 
 
-<img width="610" alt="스크린샷 2023-12-11 오전 12 48 45" src="https://github.com/lalala5772/algorithm/assets/65425885/ec8590cb-0eaf-407f-809f-60c8d52d4c49">
+<img width="800" alt="스크린샷 2023-12-11 오전 12 48 45" src="https://github.com/lalala5772/algorithm/assets/65425885/ec8590cb-0eaf-407f-809f-60c8d52d4c49">
 
 <br><br>
 
