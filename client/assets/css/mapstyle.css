@@ -23,7 +23,7 @@
 }
 
 .mainfunction{
-  padding-bottom: 20px;
+  height: 20px;
 }
 
 .searchbox{
@@ -112,8 +112,8 @@ input{
     position: absolute;
     /* margin-top: 10%; */
     left: 10%;
-    width: 78%;;
-    height: 90%;
+    width: 82%;;
+    height: 50%;
     border : 1px solid rgb(255, 255, 255);
     border-radius : 10px; 
     padding: 10px;

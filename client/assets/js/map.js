@@ -29,14 +29,14 @@ function initializeMap() {
         var mapContainer = document.getElementById('mapbox'), // 지도를 표시할 div
             mapOption = {
                 center: new kakao.maps.LatLng(35.846410, 127.132560), // 지도의 중심좌표
-                level: 3 // 지도의 확대 레벨
+                level: 4 // 지도의 확대 레벨
             };
 
         // 지도를 생성합니다
         map = new kakao.maps.Map(mapContainer, mapOption);
+        mapContainer.style.height = '500px'; 
     }
 
-    // 랜덤한 위치에 마커를 찍는 함수
     // 랜덤한 위치에 마커를 찍는 함수
 function placeRandomMarker() {
     // 기존 마커 제거
@@ -68,3 +68,19 @@ function placeRandomMarker() {
     window.onload = function() {
         initializeMap();
     };
+
+
+
+const clearInput = () => {
+    const input = document.getElementsByTagName("input")[0];
+    input.value = "";
+    markers.forEach(function(marker) {
+        marker.setMap(null);
+    });
+    markers = [];
+  }
+  
+const clearBtn = document.getElementById("clear-btn");
+clearBtn.addEventListener("click", clearInput);
+  
+  

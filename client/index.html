@@ -57,13 +57,11 @@
 									  </form> -->
 
 									  <form method="get" class="searchbox" id="queryForm">
-										<input type="search" name="dpr_query" id="dpr_query" required>
+										<input type="text" name="dpr_query" id="dpr_query" required>
 										<i class="fa fa-search" id="submit-icon" onclick="sendQuery(event)"></i>
 										<a class="clearbtn" onclick="clearInput()" id="clear-btn">Clear</a>
 									</form>
 									
-
-									<div id="tmp-container" class="tmp-container"></div>
 
 									  <script>
 										function sendQuery(event) {
@@ -71,17 +69,27 @@
 
 											//지도
 											placeRandomMarker();
-									
-											//query 전송 코드 -> 나중에 서버로 전송
-											var xhr = new XMLㅎHttpRequest();
-											xhr.onreadystatechange = function() {
-												if (xhr.readyState == 4 && xhr.status == 200) {
-													document.getElementById("tmp-container").innerHTML = xhr.responseText;
-												}
-											};
-											var query = document.getElementById("dpr_query").value;
-											xhr.open("GET", "get_query.php?dpr_query=" + encodeURIComponent(query), true);
-											xhr.send();
+
+											var userInput = $('#dpr_query').val();
+											console.log(userInput);
+											console.log(JSON.stringify({query: userInput}));
+
+											$.ajax({
+                                                url: 'http://15.164.170.166:5000/model',
+                                                type: 'POST',
+                                                async: true ,
+                                                dataType : "json",
+                                                contentType: 'application/json',
+                                                data: JSON.stringify({query: userInput}),
+                                                success: function(response) {
+                                                    console.log(response);  // 서버로부터 반환된 JSON 응답을 로그로 출력합니다.
+                                                },
+                                                error: function(error) {
+                                                    console.log(error);
+                                                }
+                                            });
+
+
 										}
 									
 									</script>
@@ -89,7 +97,7 @@
 
 									
 
-									  <div id="mapbox" class="mapbox" style="background-color:white; color:black">
+									  <div id="mapbox" class="mapbox" style="background-color:white; color:black" height="80%">
 								
 										<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=bc1471990bb16130cb93953a06d22be9"></script>
 									</div>
