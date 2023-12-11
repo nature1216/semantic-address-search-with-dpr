@@ -77,8 +77,7 @@
 
 ### 성능 지표
 <img width="460" alt="image" src="https://github.com/lalala5772/algorithm/assets/65425885/fbe0aceb-524c-4f87-b7ce-e6743760e8b5">  
-<br>
-- 약간의 Overfitting이 있긴 하여도, 그만큼 정확한 좌표 값을 return할 수 있다는 것에 의의가 있음.
+
 <br>
 <br>
 
