@@ -29,6 +29,35 @@
 <br>
 
 
+### 학습환경 및 실행
+#### 환경
+- Colab
+- python 3.10
+- sentence-transformers 2.2.2
+#### 모델 학습
+1. models/SBERT_with_klue_BERT/data/place_info_corpus - query.csv 다운로드
+2. models/SBERT_with_klue_BERT/SBERT_with_klue_BERT.ipynb에 데이터 업로드
+
+       # 데이터 업로드
+       from google.colab import files
+       files.upload()
+   
+3. models/SBERT_with_klue_BERT/SBERT_with_klue_BERT.ipynb에서 데이터 전처리 및 모델 학습
+
+#### 실행
+1. 쿼리 입력
+
+       hits = search_bi_encoder("공대 7호관 옆 흡연구역으로 와 주세요")
+       # 출력: corpus_id(유사도가 높은 순)
+   
+3. POI 텍스트 확인
+
+       print(passages[hits[0]])
+   
+
+<br>
+<br>
+
 
 ---
 ## 개발 스택
@@ -36,7 +65,11 @@
 <br>
 <br>
 
-
+---
+## Flow Chart
+![flowChart4](https://github.com/nature1216/semantic-address-search-with-dpr/assets/63771579/78554062-24fa-40bc-b46e-bcb5a152fbaf)
+<br>
+<br>
 
 ---
   
@@ -85,7 +118,7 @@
 ---
 
 ## 실행 결과
-<img width="800" alt="image" src="https://github.com/lalala5772/algorithm/assets/65425885/6f4e98fa-5396-4b45-81de-5d82815a33a2">
+<img width="800" alt="image" src="https://github.com/nature1216/semantic-address-search-with-dpr/assets/63771579/efc22c8b-3f02-4ad5-9e84-004158736653">
 
 
 <img width="800" alt="image" src="https://github.com/lalala5772/algorithm/assets/65425885/1ab6505e-97a4-492e-9663-80daafef0ca9">
@@ -103,8 +136,8 @@
 
 ## 개발자
 ### [오키duckey]
-- 김자연: 데이터 수집 및 가공, dpr 모델 개발, 서버 개발
-- 이미르: 데이터 수집 및 가공, dpr 모델 개발, 클라이언트 개발
+- 김자연([@nature1216](https://github.com/nature1216)): 데이터 수집 및 가공, dpr 모델 개발, 서버 개발
+- 이미르([@lalala5772](https://github.com/lalala5772)): 데이터 수집 및 가공, dpr 모델 개발, 클라이언트 개발
 <br><br>
 
 ---
