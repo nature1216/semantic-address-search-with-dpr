@@ -28,8 +28,8 @@
 						<!-- subject -->
 							<article id="subject" class="panel intro">
 								<header>
-									<h1>전북대학교</h1>
-									<p>시맨틱(semantic) 기반 위치정보 추정 기술</p>
+									<h1>전북대학교 <br/>POI 검색 서비스</h1>
+									<p>DPR을 이용한 시맨틱(semantic) 기반 위치정보 추정 기술</p>
 								</header>
 								<a href="#map" class="jumplink pic">
 									<span class="arrow icon solid fa-chevron-right"><span>Jbnu map</span></span>
@@ -43,7 +43,7 @@
 									<h2>Map</h2>
 								</header>
 								<p>
-									궁금한 전북대학교 내의 객체/공간을 입력하세요.
+									궁금한 전북대학교 내의 위치를 입력하세요.
 								</p>
 								<hr width = "100%">
 								
@@ -57,7 +57,7 @@
 									  </form> -->
 
 									  <form method="get" class="searchbox" id="queryForm" onsubmit="sendQuery(event)">
-										<input type="text" name="dpr_query" id="dpr_query" required>
+										<input type="text" name="dpr_query" id="dpr_query" autocomplete="off" required>
 										<i class="fa fa-search" id="submit-icon" onclick="sendQuery(event)"></i>
 										<a class="clearbtn" onclick="clearInput()" id="clear-btn">Clear</a>
 									</form>
@@ -71,7 +71,7 @@
 											console.log(userInput);
 
 											$.ajax({
-                                                url: '',
+                                                url: 'http://3.37.55.109:5000/model',
                                                 type: 'POST',
                                                 async: true ,
                                                 dataType : "json",
@@ -123,7 +123,7 @@
 									<h2>Okiduckey</h2>
 									<hr width = "100%">
 									<div class="info_member">
-										<p>김자연 - IT정보공학과  | 201912352 | annekim1216@naver.com | Github ID: nature1216</p>
+										<p>김자연 - IT정보공학과  | 201912352 | annekim1216@jbnu.ac.kr | Github ID: nature1216</p>
 										<p>이미르 - IT정보공학과 | 201912393 | alfm2766@jbnu.ac.kr | Github ID: lalala5772</p>
 									</div>
 								</header>
